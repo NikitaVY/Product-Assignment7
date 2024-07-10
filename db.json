@@ -1,0 +1,145 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "smartphones",
+      "Images": [
+        "Images/Iphone_9.jpeg"
+      ]
+    },
+    {
+      "id": "2",
+      "title": "iPhone X",
+      "description": "SIM-Free, Model A19211 6.5-inch Super Retina HD display with OLED technology A12 Bionic chip with ...",
+      "price": 899,
+      "discountPercentage": 17.94,
+      "rating": 4.44,
+      "stock": 34,
+      "brand": "Apple",
+      "category": "smartphones",
+      "Images": [
+        "Images/Iphone_x.jpeg"
+      ]
+    },
+    {
+      "id": "3",
+      "title": "Samsung Universe 9",
+      "description": "Samsung's new variant which goes beyond Galaxy to the Universe",
+      "price": 1249,
+      "discountPercentage": 15.46,
+      "rating": 4.09,
+      "stock": 36,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "Images": [
+        "Images/Samsung_9.jpeg"
+      ]
+    },
+    {
+      "id": "4",
+      "title": "OPPOF19",
+      "description": "OPPO F19 is officially announced on April 2021.",
+      "price": 280,
+      "discountPercentage": 17.91,
+      "rating": 4.3,
+      "stock": 123,
+      "brand": "OPPO",
+      "category": "smartphones",
+      "Images": [
+        "Images/OppoF19.jpeg"
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Huawei P30",
+      "description": "Huawei’s re-badged P30 Pro New Edition was officially unveiled yesterday in Germany and now the device has made its way to the UK.",
+      "price": 499,
+      "discountPercentage": 10.58,
+      "rating": 4.09,
+      "stock": 32,
+      "brand": "Huawei",
+      "category": "smartphones",
+      "Images": [
+        "Images/Huawei_P30.jpeg"
+      ]
+    },
+    {
+      "id": "6",
+      "title": "MacBook Pro",
+      "description": "MacBook Pro 2021 with mini-LED display may launch between September, November",
+      "price": 1749,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Apple",
+      "category": "smartphones",
+      "Images": [
+        "Images/Macbook_Pro.jpeg"
+      ]
+    },
+    {
+      "id": "7",
+      "title": "Motorola Moto X40",
+      "description": "Motorola Moto X40 is expected to launch soon.",
+      "price": 399,
+      "discountPercentage": 11.02,
+      "rating": 4.57,
+      "stock": 83,
+      "brand": "Motorola",
+      "category": "smartphones",
+      "Images": [
+        "Images/Moto.jpeg"
+      ]
+    },
+    {
+      "id": "8",
+      "title": "Samsung Galaxy S23 Ultra",
+      "description": "Dynamic AMOLED display, Qualcomm Snapdragon 8 Gen 2 chipset, Quad-camera setup, 12MP Selfie camera, Compatible with 45W Fast Charging, On-screen fingerprint sensor, Dustproof",
+      "price": 979,
+      "discountPercentage": 12.02,
+      "rating": 4.52,
+      "stock": 63,
+      "brand": "Samsung",
+      "category": "smartphones",
+      "Images": [
+        "Images/Samsung_galaxy.jpeg"
+      ]
+    },
+    {
+      "id": "9",
+      "title": "Oneplus 12",
+      "description": "Hasselblad Camera for Mobile, Nightscape, Dolby Vision®, Smart Scene Recognition, Portrait Mode, Master Mode, Panorama",
+      "price": 699,
+      "discountPercentage": 10.02,
+      "rating": 4.27,
+      "stock": 83,
+      "brand": "Oneplus",
+      "category": "smartphones",
+      "Images": [
+        "Images/Oneplus.jpeg"
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Xiaomi Redmi Note 10",
+      "description": "Xiaomi Redmi Note 10 Android smartphone. Announced Mar 2021.",
+      "price": 799,
+      "discountPercentage": 10.02,
+      "rating": 4.37,
+      "stock": 83,
+      "brand": "Redmi",
+      "category": "smartphones",
+      "Images": [
+        "Images/Redmi.jpeg"
+      ]
+    }
+  ],
+  "saveforLater": []
+}
