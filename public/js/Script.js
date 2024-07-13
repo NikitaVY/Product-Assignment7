@@ -1,17 +1,17 @@
 let productItem=[];
-let  favourites=[];
+let favourites=[];
 
 const getProducts=()=>
 {
     return fetch("http://localhost:3000/products")
     .then((result)=>
     {
-       if(result.status==200){
-        return Promise.resolve(result.json())
-       } 
-       else{
-        return Promise.reject("error")
-       }
+        if(result.status==200){
+            return Promise.resolve(result.json())
+        } 
+        else{
+            return Promise.reject("error")
+        }
     }).then(Response=>
     {
         console.log(Response);
@@ -29,23 +29,16 @@ const createProductList= ()=>
 {
     let products="";
     productItem.forEach(product =>{
-        products+=`<div class="card" style="width:400px">
-  <img class="card-img-top" src="${product.Images}" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title"> ${product.title} </h4>
-    <p class="card-text"> ${product.description} </p>
-    <p class="card-text"> price: ${product.price} </p>
-    <p class="card-text"> discountPercentage:${product.discountPercentage} </p>
-    <p class="card-text">rating: ${product.rating} </p>
-    <p class="card-text">stock: ${product.stock} </p>
-    <p class="card-text">brand: ${product.brand} </p>
-    <p class="card-text"> category: ${product.category} </p>
-  
-    <button type="button" onClick="addsaveforlater(${product.id})" class="btn btn-primary">Add to saveforlater </button> 
-  </div>
-</div>`
+        products+=`<div class="card">
+            <img class="card-img-top" src="${product.Images}" alt="Card image">
+            <div class="card-body">
+                <h4 class="card-title"> ${product.title} </h4>
+                <p class="card-text"> ${product.description} </p>
+                <p class="card-text"> price: ${product.price} -/</p>
+                <button type="button" onClick="addsaveforlater(${product.id})" class="btn btn-primary">Add to Favourites</button> 
+            </div>
+        </div>`
     });
-
     document.getElementById("products").innerHTML=products;
 }
 
@@ -55,17 +48,15 @@ const getSaveForLater=() =>{
     {
         if(result.status==200){
             return Promise.resolve(result.json())
-           } 
-           else{
+        } 
+        else{
             return Promise.reject("error")
-           }
-        }).then(Response=>
-        {
-            console.log(Response);
-            favourites=Response;
-            createSaveforlaterList();
         }
-        ).catch(error=>
+    }).then(Response=>{
+        console.log(Response);
+        favourites=Response;
+        createSaveforlaterList();
+    }).catch(error=>
         {
             alert(error);
     })
@@ -74,24 +65,17 @@ const getSaveForLater=() =>{
 const createSaveforlaterList =() =>{
     let saveforlater="";
     favourites.forEach(product=>{
-        saveforlater+=`<div class="card" style="width:400px">
-  <img class="card-img-top" src="${product.Images}" alt="Card image">
-  <div class="card-body">
-    <h4 class="card-title"> ${product.title} </h4>
-    <p class="card-text"> ${product.description} </p>
-    <p class="card-text"> price: ${product.price} </p>
-    <p class="card-text"> discountPercentage:${product.discountPercentage} </p>
-    <p class="card-text">rating: ${product.rating} </p>
-    <p class="card-text">stock: ${product.stock} </p>
-    <p class="card-text">brand: ${product.brand} </p>
-    <p class="card-text"> category: ${product.category} </p>
-   
-    <button type="button" onClick="deletefromsaveforlater(${product.id})" class="btn btn-primary">Delete from saveforlater </button> 
-  </div>
-</div>`
+        saveforlater+=`<div class="card">
+        <img class="card-img-top" src="${product.Images}" alt="Card image">
+        <div class="card-body">
+            <h4 class="card-title"> ${product.title} </h4>
+            <p class="card-text"> ${product.description} </p>
+            <p class="card-text"> price: ${product.price} -/ </p>
+            <button type="button" onClick="deletefromsaveforlater(${product.id})" class="btn btn-primary">Delete from Favourites</button> 
+        </div>
+    </div>`
     });
     document.getElementById("saveforlater").innerHTML=saveforlater;
-
 }
 
 const addsaveforlater=(id) =>
@@ -108,49 +92,40 @@ const addsaveforlater=(id) =>
             body : JSON.stringify(productObject),
             headers:{
                 'Content-Type':'application/json',
-                 'Accept' :'application/json'
-        }
-    }).then((result)=>
-    {
-        if(result.status == 200 || result.status==201)
-        {
-             return Promise.resolve(favourites);
-
-        }
-        else
-         { 
-            return Promise.reject("Movie is already there in favourite section")
-         }
+                'Accept' :'application/json'
+            }
+        }).then((result)=> {
+            if(result.status == 200 || result.status==201)
+            {
+                return Promise.resolve(favourites);
+            }
+            else{ 
+                return Promise.reject("Product is already there in favourite section")
+            }
         
-        }).then((Result)=> 
-        {
+        }).then((Result)=> {
             createSaveforlaterList();
             return Result;
-        }). catch(error=>
-        {
+        }). catch(error=> {
             throw new Error(error);
         })
     }
 }
-    else 
-    {
-alert("Movie is already there in favourite section");
-    }
-
-    
+else 
+{
+    alert("Product is already there in favourite section");
+}
+   
 } 
 
 const isProductAlreadyInSaveforlaterlist=(id) =>
 {
-    alert("isProductAlreadyInSaveforlaterlist" +id)
     for(let fav in favourites)
         {
             if(id== favourites[fav].id)
             {
-                alert("true");
                 return true;
             }
-        alert("false");
     }
         return false;
 }
@@ -181,12 +156,8 @@ const deletefromsaveforlater = (id) =>
                 }
             }).then(response=>
             {
-               alert("Record delete from favourite")
                 favourites=response;
                 createSaveforlaterList();
             }
-            ).catch(error=>
-            {
-                alert(error);
-            })
+            )
         }
