@@ -43,4 +43,3 @@ Function to delete a product from the save for later list by passing the id.
    - Click "Add to Save for Later" to move items to the save for later list.
    - Items should be added to db.json under the saveforlater collection.
    - Remove items from the save for later list by clicking the "Remove from Save for Later" button.
-# Product-SaveForLater
